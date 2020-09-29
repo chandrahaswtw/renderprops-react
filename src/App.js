@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ClickComponent from './ClickComponent/ClickComponent';
+import HoverComponent from './HoverComponent/HoverComponent';
+import CommonComponent from './CommonComponent/CommonComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CommonComponent
+        render={
+          (count, countHandler) => <ClickComponent count={count} countHandler={countHandler}></ClickComponent>}></CommonComponent>
+      <CommonComponent
+        render={
+          (count, countHandler) => <HoverComponent count={count} countHandler={countHandler}></HoverComponent>}></CommonComponent>
     </div>
   );
 }
